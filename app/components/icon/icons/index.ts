@@ -1,5 +1,5 @@
 import { color } from "../../../theme"
-
+import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 export const icons = {
   back: require("./arrow-left.png"),
   bullet: require("./bullet.png"),

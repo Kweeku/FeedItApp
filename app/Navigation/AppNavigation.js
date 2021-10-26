@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // import { StackNavigator, addNavigationHelpers } from 'react-navigation'
 import { createStackNavigator } from '@react-navigation/stack'
-import LoadingScreen from '../containers/LoadingScreen'
 import LoggedInStackNavigator from './LoggedInStackNavigator'
 import NotLoggedInStackNavigator from './NotLoggedInStackNavigator'
-
+import PresetScreen from '../screens/settings/preset'
 import styles from './Styles/NavigationStyles'
+
 
 // Manifest of possible screens
 export const PrimaryNav = createStackNavigator({
   LoadingScreen: { screen: LoadingScreen },
   LoggedInStack: { screen: LoggedInStackNavigator },
-  NotLoggedInStack: { screen: NotLoggedInStackNavigator }
+  NotLoggedInStack: { screen: NotLoggedInStackNavigator },
+  PresetScreen: {screen:  PresetScreen}
 }, {
   // Default config for all screens
   headerMode: 'none',

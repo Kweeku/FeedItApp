@@ -10,6 +10,7 @@ import {Alert,TextStyle, View, Image,ViewStyle,StyleSheet, Text,
   SafeAreaView, SectionList, StatusBar,Pressable,Modal, TouchableOpacity} from "react-native";
 import { MaterialIcons} from '@expo/vector-icons';
 import { PresetScreen } from './preset';
+import { PresetNavigator } from '../../navigators';
 import {DevelopmentScreen} from "./development-screen"
 import Images from "../../components/images/images";
 import { Colors } from "react-native/Libraries/NewAppScreen";
@@ -60,47 +61,54 @@ const SECTION_TITLE: TextStyle = {
   {
     title: "Legal",
     data: ["Privacy and Safety","About", "Terms and Conditions"]
-  }
+  } 
 ]
 
-const navigateToPreset = ({navigation}) => {
-  navigation.navigate(PresetScreen)
+// const navigateToPreset = ({navigation}) => {
+//   console.log("We got it")
+//     navigation.navigate("home")
+
+// const handlePress = (e) => {
+//   if(e.target.value === DATA[1].data[0]){
+//     navigateToPreset
+//   }  
+// }
+
+const navigateToPreset =({navigation}) => {
+  navigation.navigate("home") 
 }
 
-const handlePress = (e) => {
-  if(e.target.value === DATA[1].data[0]){
-    navigateToPreset
-  }  
-}
-
-const Item = ({title}) => (
-  <View 
-  style={{
-    padding: 20,
-  }
-  }
-  >
-     <TouchableOpacity 
-     onPress= {(e) => handlePress(e)}
-     >
-    <Text
-    style={{
-      fontFamily: typography.secondary,
-      fontSize: 16,
-      color: color.frost,
-      fontWeight: "bold"
-    }} 
-    >
-      {title}
-    </Text>
-    
-    </TouchableOpacity>
-  </View>
-)
 function SettingsScreen({navigation}) {
+  const Item = ({title}) => (
+    <View 
+    style={{
+      padding: 20,
+    }
+    }
+    >
+       <TouchableOpacity
+    onPress={() => {
+      if(title === "Change Crop Preset"){
+        navigateToPreset
 
-
-
+    }}}
+    >
+      <Text
+      style={{
+        fontFamily: typography.secondary,
+        fontSize: 16,
+        color: color.frost,
+        fontWeight: "bold"
+      }} 
+      >
+        {title}
+      </Text>
+      
+      </TouchableOpacity>
+  
+      
+    </View>
+  )
   const goBack = () => navigation.navigate("home")
   
   return(
@@ -125,7 +133,8 @@ function SettingsScreen({navigation}) {
         <SectionList
       sections= {DATA}
       keyExtractor={(item, index) => item + index}
-      renderItem={({ item }) => <Item title={item} />
+      renderItem={({ item }) => <Item title={item}  
+      />
         
     }
       renderSectionHeader={({ section: { title} }) => (

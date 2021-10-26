@@ -63,7 +63,7 @@ export default function DrawerNavigation() {
         options={{
           drawerIcon: () =>
           (<View >
-            <Image source={require("../../components/images/DrawerLogo.jpg")}
+            <Image source={require("../../components/images/drawerimage.jpg")}
               style={{
                 resizeMode: 'cover',
                 height: 120,
@@ -124,15 +124,15 @@ const customDrawerContent = (props, username, BoxContainer) => {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ height: '90%' }}>
+      <View style={{ height: '100%' }}>
 
         <DrawerContentScrollView {...props}>
           <View >
-            <Image source={require("../../components/images/DrawerLogo.jpg")}
+            <Image source={require("../../components/images/drawerimage.jpg")}
               style={{
-                resizeMode: 'contain',
-                height: 150,
-                width: 275,
+                resizeMode: 'stretch',
+                height: 160,
+                width: 290,
                 borderColor: color.palette.black,
                 borderRadius: 0,
                 alignContent: 'center',
@@ -152,12 +152,13 @@ const customDrawerContent = (props, username, BoxContainer) => {
 
 
           <TouchableOpacity style={styles.contactUsContainer} onPress={() => props.navigation.navigate('home')}>
-            <AntDesign name={'home'} size={35} color={color.green} />
+            {/* <AntDesign name={'home'} size={35} color={color.green} /> */}
+            <MaterialIcons name={'home'} size={35} color={color.facebook}/>
             <Text style={styles.drawerText}>Home</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.contactUsContainer} onPress={() => props.navigation.navigate('settings')}>
-            <MaterialIcons name={'settings'} size={35} color={color.green} />
+            <MaterialIcons name={'widgets'} size={35} color={color.facebook} />
 
             <Text style={styles.drawerText}>Settings</Text>
           </TouchableOpacity>
@@ -172,7 +173,7 @@ const customDrawerContent = (props, username, BoxContainer) => {
           })
           clearLoginKey();
         }}>
-           <MaterialIcons name={'logout'} size={35} color={color.green} />
+           <MaterialIcons name={'exit-to-app'} size={35} color={color.facebook} />
         <Text style={styles.drawerText}>Sign Out</Text>
       </TouchableOpacity>
         </DrawerContentScrollView>

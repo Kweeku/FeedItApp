@@ -22,14 +22,14 @@ const BottomTabNavigator = () => {
     }}
     >
       <Tab.Screen name="Home" component={HomeNavigator} 
-      options={{tabBarIcon: () => <MaterialIcons name='home' size={26} color= {color.palette.black}/>
+      options={{tabBarIcon: () => <MaterialIcons name='roofing' size={26} color= {color.facebook}/>
         }} />
       <Tab.Screen name="Statistics" component = {StatisticsNavigator}
-      options={{tabBarIcon: () => <MaterialIcons name='equalizer' size={26} color= {color.palette.black}/>
+      options={{tabBarIcon: () => <MaterialIcons name='table-chart' size={26} color= {color.facebook}/>
     }}
       />
       <Tab.Screen name="Controls" component={ControlsNavigator} 
-      options={{tabBarIcon: () => <MaterialIcons name='tune' size={26} color= {color.palette.black}/>
+      options={{tabBarIcon: () => <MaterialIcons name='settings-remote' size={26} color= {color.facebook}/>
     }}
       />
     </Tab.Navigator>
