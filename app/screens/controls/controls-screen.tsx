@@ -4,7 +4,7 @@ import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color, spacing, typography, } from "../../theme"
-import { TextStyle, View, ViewStyle, StyleSheet, Text, Alert, FlatList } from "react-native";
+import { TextStyle, View, ViewStyle, StyleSheet, Text, Alert, RefreshControl, } from "react-native";
 import { Button } from "react-native-elements"
 import { Picker } from '@react-native-picker/picker';
 // import { Dropdown } from 'react-native-material-dropdown-v2';
@@ -12,6 +12,7 @@ import { Picker } from '@react-native-picker/picker';
 import Spinner from 'react-native-loading-spinner-overlay';
 import Toast from 'react-native-simple-toast';
 import axios from 'axios';
+import { ScrollView } from "react-native-gesture-handler";
 
 const FULL: ViewStyle = {
   flex: 1,
@@ -168,6 +169,10 @@ function ControlsScreen({ navigation }) {
       <LoginWallpaper />
 
       <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
+        <ScrollView        
+         refreshControl={
+          <RefreshControl refreshing={loading} onRefresh={fetchAll } />
+        }>
         <Header
           headerText="Controls"
           leftIcon="back"
@@ -175,18 +180,17 @@ function ControlsScreen({ navigation }) {
           style={HEADER}
           titleStyle={HEADER_TITLE}
         />
-        <Spinner
-          visible={loading} />
+        {/* <Spinner
+          visible={loading} /> */}
 
-        {/* implement swipe down to reload next */}
-        <View style={{ flexDirection: 'row' }}>
+        {/* <View style={{ flexDirection: 'row' }}>
           <Button
             icon={<MaterialCommunityIcons name='reload' color={color.palette.white} size={40} />}
             type="clear"
             onPress={fetchAll}
           />
           <Text style={TITLE_WRAPPER}>Reload</Text>
-        </View>
+        </View> */}
 
         <View style={styles.centered}>
           <Text style={[TITLE_WRAPPER, { fontSize: 24 }]}>ACTUATIONS</Text>
@@ -211,6 +215,7 @@ function ControlsScreen({ navigation }) {
             <Picker.Item label="Strawberry" value="S" />
           </Picker>
         </View>
+      </ScrollView>
       </Screen>
     </View>
 
