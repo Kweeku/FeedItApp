@@ -170,7 +170,7 @@ function ControlsScreen({ navigation }) {
       <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
         <Header
           headerText="Controls"
-          leftIcon="dots"
+          leftIcon="back"
           onLeftPress={goDrawer}
           style={HEADER}
           titleStyle={HEADER_TITLE}

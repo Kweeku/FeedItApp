@@ -14,7 +14,6 @@ import { useTheme } from 'react-native-paper';
 import { Component } from 'react';
 const axios = require('axios');
 
-
 const Login = props => {
 
     const [data, setData] = React.useState({
@@ -119,7 +118,7 @@ const Login = props => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.text_header}>Welcome To GreenGrow!</Text>
+                <Text style={styles.text_header}>Feed It {"\n"}The Smart Way</Text>
             </View>
             <Animatable.View
                 animation="fadeInUpBig"
@@ -209,7 +208,7 @@ const Login = props => {
                 }
 
                 <View style={styles.button}>
-                    <Button color='#123d13' title='Sign In' onPress={() => loginHandle(data.username, data.password)} />
+                    <Button color={color.facebook} title='Sign In' onPress={() => loginHandle(data.username, data.password)} />
                 </View>
             </Animatable.View>
         </View>

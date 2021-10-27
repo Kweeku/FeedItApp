@@ -213,7 +213,7 @@ function StatisticsScreen({ navigation }) {
       <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
         <Header
           headerText="Statistics"
-          leftIcon="dots"
+          leftIcon="back"
           onLeftPress={goDrawer}
           style={HEADER}
           titleStyle={HEADER_TITLE}

@@ -108,7 +108,7 @@ function HomeScreen({ navigation }) {
       <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
         <Header
           headerText="Home"
-          leftIcon="dots"
+          leftIcon="back"
 
           onLeftPress={goDrawer}
           style={HEADER}
