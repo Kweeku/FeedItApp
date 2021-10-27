@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Screen, LoginWallpaper, Header } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
-import { FlatList, TextStyle, View, ViewStyle, Image, ImageBackground, Alert } from "react-native"
+import { FlatList, TextStyle, View, ViewStyle, Image, ImageBackground, Alert,RefreshControl } from "react-native"
 import { color, spacing } from "../../theme"
 import ItemHomeRow from './ItemHome';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -123,6 +123,9 @@ function HomeScreen({ navigation }) {
             // keyExtractor={(item, index) => index.toString()}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => <ItemHomeRow data={item} />}
+            refreshControl={
+              <RefreshControl refreshing={loading} onRefresh={fetchAll } />
+            }
           />}
       </Screen>
     </View>

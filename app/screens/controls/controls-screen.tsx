@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { LoginWallpaper, Header, Screen } from "../../components";
-import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons,  Foundation} from '@expo/vector-icons';
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color, spacing, typography, } from "../../theme"
@@ -193,28 +193,29 @@ function ControlsScreen({ navigation }) {
         </View> */}
 
         <View style={styles.centered}>
-          <Text style={[TITLE_WRAPPER, { fontSize: 24 }]}>ACTUATIONS</Text>
+          <Text style={[TITLE_WRAPPER, { fontSize: 24 }]}>Power</Text>
         </View>
         <View style={styles.hairline} />
         <Button
-          icon={<MaterialIcons name='power-settings-new' color={color.palette.white} size={100} />}
+          icon={<Foundation name='power' color={color.palette.white} size={100} />}
           type="clear"
           style={styles.centered}
           onPress={turnOffActuator}
         />
-        <Text style={TITLE_WRAPPER}>CROP</Text>
+     
+        {/* <Text style={TITLE_WRAPPER}>CROP</Text>
         <View style={styles.hairline} />
         <View style={styles.dropdown}>
           <Picker
             selectedValue={selectedValue}
             style={styles.picker}
             onValueChange={(itemValue, itemIndex) => resetCropVals(itemValue)}
-          >
+          > */}
             {/* ideally, fetch list of crops from database associated with account */}
-            <Picker.Item label="Tomato" value="T" />
+            {/* <Picker.Item label="Tomato" value="T" />
             <Picker.Item label="Strawberry" value="S" />
           </Picker>
-        </View>
+        </View> */}
       </ScrollView>
       </Screen>
     </View>

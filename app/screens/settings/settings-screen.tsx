@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { TextField,Button, Wallpaper} from "../../components";
 import { useNavigation } from "@react-navigation/native"
-import { Screen} from "../../components"
+import { Screen,LoginWallpaper} from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color,spacing,typography } from "../../theme"
@@ -52,7 +52,7 @@ const SECTION_TITLE: TextStyle = {
   },
   {
     title: "Presets",
-    data: ["Change Crop Preset"]
+    data: ["Change FeedIt Preset"]
   },
   {
     title: "General",
@@ -88,7 +88,7 @@ function SettingsScreen({navigation}) {
     >
        <TouchableOpacity
     onPress={() => {
-      if(title === "Change Crop Preset"){
+      if(title === "Change FeedIt Preset"){
         navigateToPreset
 
     }}}
@@ -113,7 +113,7 @@ function SettingsScreen({navigation}) {
   
   return(
     <View testID="SettingsScreen" style={FULL}>
-  <Wallpaper />
+  <LoginWallpaper />
   <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
         <Header
         headerText="Settings"
