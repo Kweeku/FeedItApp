@@ -5,6 +5,7 @@ import { EvilIcons, AntDesign } from '@expo/vector-icons';
 import SettingsScreen from "../../screens/settings/settings-screen";
 import LoginScreen from "../../screens/login/login-screen";
 import LogoutScreen from "../../screens/logout/logout-screen";
+import { PresetScreen } from '../../screens/settings/preset';
 import TabNavigator from "../../navigators/tabnavigator/tabnavigator-navigator"
 import { MaterialIcons } from '@expo/vector-icons';
 import { color, typography } from "../../theme";
@@ -97,6 +98,16 @@ export default function DrawerNavigation() {
         drawerIcon: () => <MaterialIcons name='settings' size={26} color={color.palette.white} />
       }} />
 
+      <Drawer.Screen name="preset" component={PresetScreen} options={{
+        drawerLabel: () =>
+          <View>
+            <Text style={styles.DrawerTextColor}>
+              Preset
+            </Text>
+          </View>,
+        drawerIcon: () => <MaterialIcons name='set-meal' size={26} color={color.palette.white} />
+      }} />
+
       <Drawer.Screen name="logout" component={LogoutScreen} options={{
         drawerLabel: () =>
           <View>
@@ -162,7 +173,11 @@ const customDrawerContent = (props, username, BoxContainer) => {
 
             <Text style={styles.drawerText}>Settings</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.contactUsContainer} onPress={() => props.navigation.navigate('preset')}>
+            <MaterialIcons name={'set-meal'} size={35} color={color.facebook} />
 
+            <Text style={styles.drawerText}>Preset</Text>
+          </TouchableOpacity>
           <TouchableOpacity
         style={styles.contactUsContainer}
         onPress={() => {

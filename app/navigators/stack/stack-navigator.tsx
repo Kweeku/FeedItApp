@@ -3,7 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack"
 import ControlsScreen from "../../screens/controls/controls-screen"
 import HomeScreen from "../../screens/home/home-screen"
 import StatisticsScreen from "../../screens/statistics/statistics-screen"
-import { PresetScreen } from "../../screens/settings/preset"
 import { Header } from "../../components/header/header"
 
 
@@ -48,18 +47,6 @@ export function ControlsNavigator(){
   )
 }
 
-export function PresetNavigator(){
-  return(
-    <Stack.Navigator
-    screenOptions={{
-      headerShown: false
-    }}
-  >
-    <Stack.Screen name="preset" component={PresetScreen} />
-    </Stack.Navigator>
-
-  )
-}
 
 
 

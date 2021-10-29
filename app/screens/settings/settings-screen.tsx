@@ -10,7 +10,6 @@ import {Alert,TextStyle, View, Image,ViewStyle,StyleSheet, Text,
   SafeAreaView, SectionList, StatusBar,Pressable,Modal, TouchableOpacity} from "react-native";
 import { MaterialIcons} from '@expo/vector-icons';
 import { PresetScreen } from './preset';
-import { PresetNavigator } from '../../navigators';
 import {DevelopmentScreen} from "./development-screen"
 import Images from "../../components/images/images";
 import { Colors } from "react-native/Libraries/NewAppScreen";

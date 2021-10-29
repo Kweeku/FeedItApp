@@ -152,10 +152,10 @@ function ControlsScreen({ navigation }) {
             })
               .then(function (response) {
                 console.log(response)
-                Toast.show('Success! Crop parameters reset', Toast.LONG);
+                Toast.show('Success! Feed parameters reset', Toast.LONG);
               })
               .catch(function (error) {
-                Toast.show('Error! Something went wrong trying to reset your crop parameters', Toast.LONG);
+                Toast.show('Error! Something went wrong trying to reset your feed parameters', Toast.LONG);
                 console.log(error);
               });
           }
