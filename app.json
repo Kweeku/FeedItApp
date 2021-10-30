@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "GreenGrow",
-    "slug": "GreenGrow",
+    "name": "FeedIt",
+    "slug": "FeedIt",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/favicon.png",
+    "icon": "./assets/logo2.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -20,13 +20,13 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo2.png"
     },
     "android": {
-      "package": "com.kweku.GreenGrow",
+      "package": "com.kweku.FeedIt",
       "versionCode": 1
     },
-    "description": "Mobile app for GreenGrow Systems.",
+    "description": "Mobile app for FeedIt System.",
     "githubUrl": "https://github.com/Kweeku/GreenGrowFlameApp/tree/master/app"
   }
 }
