@@ -47,6 +47,8 @@ function StatisticsScreen({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [sensors, setSensors] = useState(null);
 
+  const data = [100,97,78,70,60,40,23,11,100,98];
+  
   const [state, setState] = useState({
     sort: 'dsc',
     limit: 10,
@@ -224,119 +226,63 @@ function StatisticsScreen({ navigation }) {
                 }
         >
         <>
-        <Text style={[TITLE_WRAPPER, { fontSize: 19 }]}>Crop Data</Text>
+         <Text style={[TITLE_WRAPPER, { fontSize: 19 }]}>FeedIt Data</Text>
           <View style={styles.hairline} />
-            <Text style={TITLE_WRAPPER}>Temperature Chart</Text>
+            <Text style={TITLE_WRAPPER}>Feed Amount -Tilapia</Text>
             <View style={styles.hairline} />
             <View style={{ alignItems: 'center', marginTop: 15 }}>
-              {state.tempVals &&
+              {/* {state.tempVals && */}
                 <View style={{ height: 200, flexDirection: 'row', width: Dimensions.get('screen').width - 35, backgroundColor: '#ffffff', borderRadius: 10, elevation: 3 }}>
                   <YAxis
-                    data={state.tempVals}
+                    data={data}
                     contentInset={{ top: 20, bottom: 20 }}
                     svg={{
                       fill: 'black',
                       fontSize: 14,
                     }}
                     numberOfTicks={10}
-                    formatLabel={(value) => `${value}ºC`}
+                    // formatLabel={(value) => `${value}ºC`}
                     style={{ marginLeft: 5 }}
                   />
                   <LineChart
                     style={{ flex: 1, marginLeft: 16 }}
-                    data={state.tempVals}
-                    
+                    data={data}
                     svg={{ stroke: 'rgb(134, 65, 244)' }}
                     contentInset={{ top: 20, bottom: 20, right: 20 }}
                   >
                     <Grid />
                   </LineChart>
                 </View>
-              }
+              {/* } */}
             </View>
-            <Text style={TITLE_WRAPPER}>Humidity Chart</Text>
-            <View style={styles.hairline} />
-            <View style={{ alignItems: 'center', marginTop: 15 }}>
-              {state.humVals &&
-                <View style={{ height: 200, flexDirection: 'row', width: Dimensions.get('screen').width - 35, backgroundColor: '#ffffff', borderRadius: 10, elevation: 3 }}>
-                  <YAxis
-                    data={state.humVals}
-                    contentInset={{ top: 20, bottom: 20 }}
-                    svg={{
-                      fill: 'black',
-                      fontSize: 14,
-                    }}
-                    numberOfTicks={10}
-                    formatLabel={(value) => `${value}%`}
-                    style={{ marginLeft: 5 }}
-                  />
-                  <AreaChart
-                    style={{ flex: 1, marginLeft: 16 }}
-                    data={state.humVals}
-                    svg={{ stroke: 'rgb(134, 65, 244)' }}
-                    contentInset={{ top: 20, bottom: 20, right: 20 }}
-                  >
-                    <Grid />
-                  </AreaChart>
-                </View>
-              }
-            </View>
-
-            <Text style={TITLE_WRAPPER}>Illuminance Chart</Text>
-            <View style={styles.hairline} />
-            <View style={{ alignItems: 'center', marginTop: 15 }}>
-              {state.illumVals &&
-                <View style={{ height: 200, flexDirection: 'row', width: Dimensions.get('screen').width - 35, backgroundColor: '#ffffff', borderRadius: 10, elevation: 3 }}>
-                  <YAxis
-                    data={state.illumVals}
-                    contentInset={{ top: 20, bottom: 20 }}
-                    svg={{
-                      fill: 'black',
-                      fontSize: 14,
-                    }}
-                    numberOfTicks={10}
-                    formatLabel={(value) => `${value}ºC`}
-                    style={{ marginLeft: 5 }}
-                  />
-                  <LineChart
-                    style={{ flex: 1, marginLeft: 16 }}
-                    data={state.illumVals}
-                    svg={{ stroke: 'rgb(134, 65, 244)' }}
-                    contentInset={{ top: 20, bottom: 20, right: 20 }}
-                  >
-                    <Grid />
-                  </LineChart>
-                </View>
-              }
-            </View>
-
-            <Text style={TITLE_WRAPPER}>Soil Humidity Chart</Text>
+          
+            <Text style={TITLE_WRAPPER}>Feed Amount Used -Daily</Text>
             <View style={styles.hairline} />
             <View style={{ alignItems: 'center', marginTop: 15, marginBottom: 20 }}>
-              {state.soilVals &&
+              {/* {state.soilVals && */}
                 <View style={{ height: 200, flexDirection: 'row', width: Dimensions.get('screen').width - 35, backgroundColor: '#ffffff', borderRadius: 10, elevation: 3 }}>
                   <YAxis
-                    data={state.soilVals}
+                    data={data}
                     contentInset={{ top: 20, bottom: 20 }}
                     svg={{
                       fill: 'black',
                       fontSize: 14,
                     }}
                     numberOfTicks={10}
-                    formatLabel={(value) => `${value}%`}
+                    // formatLabel={(value) => `${value}%`}
                     style={{ marginLeft: 5 }}
                   />
                   <AreaChart
                     style={{ flex: 1, marginLeft: 16 }}
-                    data={state.soilVals}
+                    data={data}
                     svg={{ stroke: 'rgb(134, 65, 244)' }}
                     contentInset={{ top: 20, bottom: 20, right: 20 }}
                   >
                     <Grid />
                   </AreaChart>
                 </View>
-              }
-          </View>
+              {/* } */}
+          </View> 
         </>
         </ScrollView>
       </Screen>

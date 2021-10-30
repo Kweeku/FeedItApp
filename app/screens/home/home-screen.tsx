@@ -54,7 +54,7 @@ function HomeScreen({ navigation }) {
     // fetch and set relevant data
     axios({
       method: 'get',
-      url: `/devices`,
+      url: `/devices`,  
     })
       .then(function (response) {
         // error with fetching devices associated with account hence filtering
@@ -72,35 +72,47 @@ function HomeScreen({ navigation }) {
       });
   }
 
-  useEffect(() => {
-    if (mounted) {
-      fetchAll();
-    }
-    if (device) {
-      const humSensor = device.sensors.filter(sensor => sensor.name === 'humiditySensor 1');
-      const tempSensor = device.sensors.filter(sensor => sensor.name === 'temperatureSensor 1');
-      const illumSensor = device.sensors.filter(sensor => sensor.name === 'illuminanceSensor 1');
-      const soilHumSensor = device.sensors.filter(sensor => sensor.name === 'SoilHumidity 1');
+  // useEffect(() => {
+  //   if (mounted) {
+  //     fetchAll();
+  //   }
+  //   if (device) {
+  //     const humSensor = device.sensors.filter(sensor => sensor.name === 'humiditySensor 1');
+  //     const tempSensor = device.sensors.filter(sensor => sensor.name === 'temperatureSensor 1');
+  //     const illumSensor = device.sensors.filter(sensor => sensor.name === 'illuminanceSensor 1');
+  //     const soilHumSensor = device.sensors.filter(sensor => sensor.name === 'SoilHumidity 1');
 
-      setState({ ...state, humSensor: humSensor[0], tempSensor: tempSensor[0], illumSensor: illumSensor[0], soilHumSensor: soilHumSensor[0] });
-    }
-    return function cleanup() {
-      mounted = false;
-    }
-  }, [device]);
+  //     setState({ ...state, humSensor: humSensor[0], tempSensor: tempSensor[0], illumSensor: illumSensor[0], soilHumSensor: soilHumSensor[0] });
+  //   }
+  //   return function cleanup() {
+  //     mounted = false;
+  //   }
+  // }, [device]);
 
-  const DATA = state.tempSensor ? [
+  // const DATA = state.tempSensor ? [
+  //   {
+  //     id: 'Tomato',
+  //     image: Images.tomato,
+  //     sensorVals: { Temperature: state.tempSensor.value.value, Humidity: state.humSensor.value.value, Water: state.soilHumSensor.value.value, Light: state.illumSensor.value.value }
+  //   },
+  //   {
+  //     id: 'Strawberry',
+  //     image: Images.strawberry,
+  //     sensorVals: { Temperature: state.tempSensor.value.value, Humidity: state.humSensor.value.value, Water: state.soilHumSensor.value.value, Light: state.illumSensor.value.value }
+  //   },
+  // ] : [];
+  const DATA = [
     {
-      id: 'Tomato',
+      id: 'Pond 1',
       image: Images.tomato,
-      sensorVals: { Temperature: state.tempSensor.value.value, Humidity: state.humSensor.value.value, Water: state.soilHumSensor.value.value, Light: state.illumSensor.value.value }
+      sensorVals: { Temperature: 2, Humidity: 4, Water: 6, Light: 8 }
     },
     {
-      id: 'Strawberry',
+      id: 'Pond 2',
       image: Images.strawberry,
-      sensorVals: { Temperature: state.tempSensor.value.value, Humidity: state.humSensor.value.value, Water: state.soilHumSensor.value.value, Light: state.illumSensor.value.value }
+      sensorVals: { Temperature: 1, Humidity: 3, Water: 5, Light: 7 }
     },
-  ] : [];
+  ];
 
   return (
     <View testID="HomeScreen" style={FULL}>
@@ -114,7 +126,7 @@ function HomeScreen({ navigation }) {
           style={HEADER}
           titleStyle={HEADER_TITLE}
         />
-        {state.tempSensor &&
+        {/* {state.tempSensor && */}
           <FlatList
             contentContainerStyle={FLAT_LIST}
             data={DATA}
@@ -123,10 +135,11 @@ function HomeScreen({ navigation }) {
             // keyExtractor={(item, index) => index.toString()}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => <ItemHomeRow data={item} />}
-            refreshControl={
-              <RefreshControl refreshing={loading} onRefresh={fetchAll } />
-            }
-          />}
+            // refreshControl={
+            //   <RefreshControl refreshing={loading} onRefresh={fetchAll } />
+            // }
+          />
+          {/* } */}
       </Screen>
     </View>
   )
