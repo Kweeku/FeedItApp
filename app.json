@@ -4,7 +4,7 @@
     "slug": "FeedIt",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo2.png",
+    "icon": "./assets/logo3.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -20,13 +20,13 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/logo2.png"
+      "favicon": "./assets/logo3.png"
     },
     "android": {
       "package": "com.kweku.FeedIt",
       "versionCode": 1
     },
     "description": "Mobile app for FeedIt System.",
-    "githubUrl": "https://github.com/Kweeku/GreenGrowFlameApp/tree/master/app"
+    "githubUrl": "https://github.com/Kweeku/FeedItApp"
   }
 }
