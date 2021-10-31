@@ -2,7 +2,7 @@
   "expo": {
     "name": "FeedIt",
     "slug": "FeedIt",
-    "version": "1.0.0",
+    "version": "1.0.0", 
     "orientation": "portrait",
     "icon": "./assets/logo3.png",
     "splash": {

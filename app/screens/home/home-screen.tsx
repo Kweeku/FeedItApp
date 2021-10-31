@@ -107,11 +107,11 @@ function HomeScreen({ navigation }) {
       image: Images.tomato,
       sensorVals: { Temperature: 2, Humidity: 4, Water: 6, Light: 8 }
     },
-    {
-      id: 'Pond 2',
-      image: Images.strawberry,
-      sensorVals: { Temperature: 1, Humidity: 3, Water: 5, Light: 7 }
-    },
+    // {
+    //   id: 'Pond 2',
+    //   image: Images.strawberry,
+    //   sensorVals: { Temperature: 1, Humidity: 3, Water: 5, Light: 7 }
+    // },
   ];
 
   return (

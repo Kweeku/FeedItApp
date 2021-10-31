@@ -51,10 +51,6 @@ const DATA =[
     id: '01',
     title: 'Pond 1'
   },
-  {
-    id: '02',
-    title: 'Pond 2'
-  }
 ]
 
 
@@ -339,8 +335,6 @@ export function PresetScreen({navigation},props) {
             <Text style={styles.modaldatatext}>1.5 mm</Text>
             <Text style={styles.modaltext}>Total Expected Feed Used Till Harvest</Text>
             <Text style={styles.modaldatatext}>8160 kg</Text>
-            <Text style={styles.modaltext}>Total Expected Number of Fishes At Harvest</Text>
-            <Text style={styles.modaldatatext}>8500</Text>
 
             <View style= {styles.modalbuttonsize}>
             <Pressable
@@ -381,6 +375,7 @@ export function PresetScreen({navigation},props) {
             placeholder="256kg - 365kg recommended" 
             keyboardType = 'numeric'
             placeholderTextColor={color.coal}/> 
+            
             <View style= {styles.modalbuttonsize}>
             <Pressable
               style={styles.buttonactive}
@@ -583,7 +578,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     height: 40,
     marginBottom: 30,
-    color: color.white,
+    color: color.coal,
     borderBottomWidth: 1,
     borderBottomColor: color.coal
   },
